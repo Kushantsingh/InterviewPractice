@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="MyTestSuite">
+
+    <listeners>
+        <listener class-name="Util.LoadXmlParametersListener"/>
+        <listener class-name="Report.CustomReporter"/>
+
+    </listeners>
+
+    <parameter name="testing" value="Testing Successfull"/>
+
+    <test name="MyFirstTest">
+        <classes>
+        <class name="Util.UtilityClass"/>
+        <class name="PostScenarios"/>
+        </classes>
+    </test>
+</suite>
