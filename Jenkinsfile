@@ -15,7 +15,13 @@ node('master')
         {
         sh "mvn clean install"
         }
-            stage('Archive Reports') {
-                junit '**/target/surefire-reports/*.xml'
-            }
+      stage('Publish Report') {
+             publishHTML([
+                 allowMissing: false,
+                 alwaysLinkToLastBuild: true,
+                 keepAll: true,
+                 reportDir: '.',
+                 reportFiles: 'custom-report.html',
+                 reportName: 'Custom API Report'
+             ])
     }
