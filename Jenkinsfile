@@ -1,6 +1,6 @@
 
 def scmVars
-node('Built-In Node')
+node('master')
 {
         stage('Cleanup')
         {
