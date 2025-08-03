@@ -13,7 +13,7 @@ node('master')
         }
         stage('Build and Run')
         {
-        sh "${mvnHome}/bin/mvn clean test"
+        sh "mvn clean install"
         }
             stage('Archive Reports') {
                 junit '**/target/surefire-reports/*.xml'
