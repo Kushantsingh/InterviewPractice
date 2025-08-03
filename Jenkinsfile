@@ -3,14 +3,11 @@ node('master') {
     stage('Cleanup') {
         deleteDir()
     }
-parameters {
-  string defaultValue: 'QA', name: 'Environment', trim: true
-}
 
     stage('Clone Sources') {
         scmVars = checkout scm
         currentBuild.description = scmVars.GIT_LOCAL_BRANCH
-        echo {Environment}
+        echo ${params.Environment}
     }
 
     stage('Build and Run') {
