@@ -8,7 +8,7 @@ node('master')
         }
         stage('Clone Sources')
         {
-        scmVars=checkout scmVars
+        scmVars=checkout scm
         currentBuild.description=scmVars.GIT_LOCAL_BRANCH
         }
         stage('Build and Run')
